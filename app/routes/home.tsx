@@ -7,6 +7,8 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Home() {
+type Props = {}
+
+export default function Home({}: Props) {
   return <main>EVOGYM</main>;
 }
