@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router";
 import Logo from "@/assets/Logo.png";
 import { routes } from '@/shared/routes';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -26,20 +27,7 @@ export default function MobileNavigation() {
 
       {/* Hamburger button */}
       <div onClick={(e) => menuHandler(e, true)}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="size-6 cursor-pointer"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          />
-        </svg>
+        <Bars3Icon className="size-6 cursor-pointer"/>
       </div>
 
       {/* Backdrop */}
@@ -83,20 +71,7 @@ export default function MobileNavigation() {
 
           {/* Close button */}
           <div onClick={(e) => menuHandler(e, false)}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6 cursor-pointer"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18 18 6M6 6l12 12"
-              />
-            </svg>
+            <XMarkIcon className="size-6 cursor-pointer"/>
           </div>
         </div>
       </nav>
