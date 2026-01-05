@@ -22,11 +22,21 @@
   --breakpoint-xs: "480px";
   --breakpoint-sm: "768px";
   --breakpoint-md: "1060px";
+  --animate-marquee: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 html,
 body {
-  @apply bg-gray-20 dark:bg-gray-950 relative overflow-x-visible h-full @container/root scroll-smooth;
+  @apply bg-gray-20 dark:bg-gray-950 relative overflow-x-visible h-full @container/root scroll-smooth font-dmsans text-base;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;

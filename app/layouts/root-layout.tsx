@@ -1,3 +1,4 @@
+import FooterNavigation from "@/navigation/footer-navigation";
 import MainNavigation from "@/navigation/main-navigation";
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router";
@@ -24,6 +25,7 @@ export default function RootLayout({}: Props) {
     <>
       <MainNavigation isTopOfThePage={isTopOfThePage} />
       <Outlet />
+      <FooterNavigation />
     </>
   );
 }

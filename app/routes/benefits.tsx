@@ -11,6 +11,6 @@ type Props = {}
 
 export default function Benefits({}: Props) {
   return (
-    <main>Benefits</main>
+    <section>Benefits</section>
   )
 }

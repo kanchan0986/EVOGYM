@@ -11,6 +11,6 @@ type Props = {}
 
 export default function OurClasses({}: Props) {
   return (
-    <main>OurClasses</main>
+    <section>OurClasses</section>
   )
 }
