@@ -1,7 +1,4 @@
-export type Route = {
-    to: string;
-    label: string;
-}
+import type { Route } from "./types";
 
 export const routes: Route[] = [
   { to: ".", label: "Home" },
