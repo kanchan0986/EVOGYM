@@ -10,15 +10,15 @@ type Props = {
 export default function MainNavigation({ isTopOfThePage }: Props) {
   return (
     <nav
-      className={`fixed inset-0 flex h-16 w-full items-center justify-between px-4 @7xl/root:px-20 ${isTopOfThePage ? "" : "bg-gray-20 shadow-[0_0.1rem_1rem_rgba(0,0,0,0.25)]"}`}
+      className={`fixed inset-0 z-10 flex h-16 w-full items-center justify-between px-4 @7xl/root:px-20 ${isTopOfThePage ? "" : "bg-gray-20 shadow-[0_0.1rem_1rem_rgba(0,0,0,0.25)]"}`}
     >
       <MobileNavigation />
       <div className="hidden w-11/12 items-center gap-x-2 @7xl/root:flex">
-        {/* Logo */}
+        {/* ---------------------------------- Logo ---------------------------------- */}
         <Link to={`${routes[0].to}`} className="w-60">
           <img src={Logo} alt="Logo" className="w-40 min-w-35 object-cover" />
         </Link>
-        {/* Menu Items */}
+        {/* ------------------------------- Menu Items ------------------------------- */}
         <div className="flex gap-x-4">
           {routes.map((route) => (
             <NavLink
@@ -35,7 +35,7 @@ export default function MainNavigation({ isTopOfThePage }: Props) {
           ))}
         </div>
       </div>
-      {/* Right side menu items */}
+      {/* -------------------------- Right side menu items ------------------------- */}
       <div className="hidden w-4/12 items-center justify-end gap-x-4 @7xl/root:flex">
         <Link
           to={`${routes[0].to}#sign-in`}
@@ -44,7 +44,7 @@ export default function MainNavigation({ isTopOfThePage }: Props) {
           Sign In
         </Link>
         <Link to={`${routes[0].to}#become-a-member`}>
-          <button className="bg-secondary-500 cursor-pointer rounded-md px-8 text-gray-500 hover:text-white active:text-white">
+          <button className="bg-secondary-500 hover:bg-primary-500 cursor-pointer rounded-md px-8 text-gray-500 hover:text-white active:text-white">
             Become a Member
           </button>
         </Link>
