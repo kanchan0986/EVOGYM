@@ -14,21 +14,21 @@ export const cardContent: CardContent[] = [
     heading: "State of Art Facitlities",
     details:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, delectus?",
-    link: "#",
+    link: "/benefits#state_of_art_facilities",
   },
   {
     icon: <UserGroupIcon className="size-6" />,
     heading: "100' of Diverse Classes",
     details:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, ut?",
-    link: "#",
+    link: "/benefits#100_of_diverse_classes",
   },
   {
     icon: <AcademicCapIcon className="size-6" />,
     heading: "Expert and Pro Trainers",
     details:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi, ullam!",
-    link: "#",
+    link: "/benefits#expert_and_pro_trainers",
   },
 ];
 

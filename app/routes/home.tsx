@@ -18,6 +18,7 @@ import image4 from "@/assets/image4.png";
 import image5 from "@/assets/image5.png";
 import image6 from "@/assets/image6.png";
 import ContactForm from "@/components/ContactForm/ContactForm";
+import WrapperVertical from "@/components/Wrapper/WrapperVertical";
 
 const images = [
   { id: 0, url: image1, alt: "image1" },
@@ -51,7 +52,7 @@ export default function Home({}: Props) {
       /*                                Hero section                                */
       /* -------------------------------------------------------------------------- */}
 
-      <section className="flex flex-col items-center justify-between px-5 @3xl/root:flex-row @3xl/root:flex-wrap @7xl/root:pr-18">
+      <WrapperVertical className="px-5 @7xl/root:pr-18">
         <motion.div
           className="flex flex-col gap-y-8 @3xl/root:w-8/12 @7xl/root:bg-[url(@/assets/EvolveText.png)] @7xl/root:bg-no-repeat @7xl/root:pl-16"
           initial="hidden"
@@ -104,7 +105,7 @@ export default function Home({}: Props) {
               <Button className="capitalize">join now</Button>
             </Link>
             <Link
-              to="#"
+              to="/benefits"
               className="hover:text-primary-500 active:text-primary-500 text-gray-500 underline decoration-[0.01rem] underline-offset-3"
             >
               learn more
@@ -129,7 +130,7 @@ export default function Home({}: Props) {
             }}
           />
         </div>
-      </section>
+      </WrapperVertical>
 
       {/* -------------------------------------------------------------------------- */
       /*                           Sponsor Slider Section                           */
@@ -141,7 +142,7 @@ export default function Home({}: Props) {
       /*                              Benefits section                              */
       /* -------------------------------------------------------------------------- */}
 
-      <section className="mt-16 flex flex-col gap-y-40 px-5 pb-40 @3xl/root:pt-52 @7xl/root:px-20">
+      <WrapperVertical className="mt-16 gap-y-40 px-5 pb-40 @3xl/root:pt-52 @7xl/root:px-20">
         {/* ------------------------------ Cards gallery ----------------------------- */}
 
         <div className="flex flex-col gap-y-8">
@@ -243,13 +244,13 @@ export default function Home({}: Props) {
             </motion.div>
           </div>
         </div>
-      </section>
+      </WrapperVertical>
 
       {/* -------------------------------------------------------------------------- */
       /*                             Our Classes Section                            */
       /* -------------------------------------------------------------------------- */}
 
-      <section className="bg-primary-100 flex flex-col gap-y-20 px-5 py-20 @3xl/root:py-30 @7xl/root:px-20">
+      <WrapperVertical className="bg-primary-100 gap-y-20 px-5 py-20 @3xl/root:py-30 @7xl/root:px-20">
         {/* --------------------------------- Heading -------------------------------- */}
 
         <div className="flex flex-col gap-y-8">
@@ -287,13 +288,13 @@ export default function Home({}: Props) {
         {/* -------------------------------- Carousel -------------------------------- */}
 
         <Carousel images={images} />
-      </section>
+      </WrapperVertical>
 
       {/* -------------------------------------------------------------------------- */
       /*                              Join Now Section                              */
       /* -------------------------------------------------------------------------- */}
 
-      <section className="flex flex-col gap-y-20 bg-position-[bottom_2rem_right_2rem] px-5 py-20 @3xl/root:py-30 @7xl/root:bg-[url(@/assets/EvolveText.png)] @7xl/root:bg-no-repeat @7xl/root:px-20">
+      <WrapperVertical className="gap-y-20 bg-position-[bottom_2rem_right_2rem] px-5 py-20 @3xl/root:py-30 @7xl/root:bg-[url(@/assets/EvolveText.png)] @7xl/root:bg-no-repeat @7xl/root:px-20">
         <div className="flex flex-col items-start justify-between gap-y-20 @3xl/root:flex-row">
           <div className="flex basis-8/12 flex-col items-start gap-y-16 @3xl/root:pr-8">
 
@@ -357,7 +358,7 @@ export default function Home({}: Props) {
             />
           </div>
         </div>
-      </section>
+      </WrapperVertical>
     </section>
   );
 }
