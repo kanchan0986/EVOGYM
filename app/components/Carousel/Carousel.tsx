@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "motion/react";
 import type { Carousel } from "@/shared/types";
 import Button from "../Button/Button";
 import { StopCircleIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 type Props = { images: Carousel[] };
 
@@ -14,6 +16,7 @@ export default function Carousel({ images }: Props) {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isInteracting, setIsInteracting] = useState<boolean>(false);
   const [isForward, setIsForward] = useState<boolean>(true);
+  const isDesktop = useMediaQuery("(min-width: 1295px)");
 
   /* --------------------------- Auto-Advance Logic --------------------------- */
   useEffect(() => {
@@ -84,24 +87,39 @@ export default function Carousel({ images }: Props) {
               }
             }}
           >
-            {[0, 1, 2].map((offset) => {
-              // loop over an array with just 3 items
+            {(!isDesktop ? [0] : [0, 1, 2]).map((offset) => { // if media is mobile than show one pic at a time otherwise show 3 pics at a time
               const idx = (currentIndex + offset) % images.length; // set current image at the first offset then second image at second position then third at the third position then rotate the loop
               const img = images[idx];
               return (
-                <img
+                <Link
                   key={img.id}
-                  src={img.url}
-                  alt={img.alt}
-                  className="w-full rounded-md object-cover @3xl/root:w-1/3"
-                />
+                  to={img.link}
+                  className="relative z-1 w-full @3xl/root:w-1/3 overflow-hidden"
+                >
+                  <img src={img.url} alt={img.alt} className="size-full rounded-md object-cover" />
+                  <motion.div
+                    initial="hidden"
+                    whileHover="visible"
+                    variants={{
+                      hidden: {opacity: 0, y: 100},
+                      visible: {opacity: 1, y: 0}
+                    }}
+                    transition={{duration: 0.3}}
+                    className="absolute inset-0 size-full p-3 hidden @7xl/root:block"
+                   >
+                    <div className="relative size-full flex flex-col items-center justify-center text-center text-white  bg-primary-500/30 p-10 rounded-md shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                      <h4 className="capitalize text-gray-500 font-bold text-2xl">{img.details.title}</h4>
+                      {img.details.desc && <p >{img.details.desc}</p>}
+                    </div>
+                  </motion.div>
+                </Link>
               );
             })}
           </motion.div>
         </div>
       </AnimatePresence>
       {/* ----------------------------- Action Buttons ----------------------------- */}
-      <div className="absolute top-[40%] left-0 hidden w-full items-center justify-between @3xl/root:flex">
+      <div className="absolute top-[40%] left-0 z-0 hidden w-full items-center justify-between @3xl/root:flex">
         <Button clickHandler={handlePrev}>Prev</Button>
         <Button clickHandler={handleNext}>Next</Button>
       </div>
@@ -119,14 +137,9 @@ export default function Carousel({ images }: Props) {
   );
 }
 
-
-
-
 /* -------------------------------------------------------------------------- */
 /*                              Carousel Type Two                             */
 /* -------------------------------------------------------------------------- */
-
-
 
 // import type { Carousel } from "@/shared/types";
 // import image1 from "@/assets/image1.png";
@@ -238,14 +251,9 @@ export default function Carousel({ images }: Props) {
 //   );
 // }
 
-
-
 /* -------------------------------------------------------------------------- */
 /*                             Carousel Type Three                            */
 /* -------------------------------------------------------------------------- */
-
-
-
 
 // import React, { useEffect, useState } from "react";
 // import { motion, AnimatePresence } from "motion/react";

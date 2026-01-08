@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import Typewriter from "@/components/Typewriter/Typewriter";
 import Marquee from "@/components/Marquee/Marquee";
 import Cards from "@/components/Cards/Cards";
-import type { Words } from "@/shared/types";
+import type { Carousel as CarouselType, Words } from "@/shared/types";
 import Button from "@/components/Button/Button";
 import benefitsGraphic from "@/assets/BenefitsPageGraphic.png";
 import Carousel from "@/components/Carousel/Carousel";
@@ -20,13 +20,61 @@ import image6 from "@/assets/image6.png";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import WrapperVertical from "@/components/Wrapper/WrapperVertical";
 
-const images = [
-  { id: 0, url: image1, alt: "image1" },
-  { id: 1, url: image2, alt: "image2" },
-  { id: 2, url: image3, alt: "image3" },
-  { id: 3, url: image4, alt: "image4" },
-  { id: 4, url: image5, alt: "image5" },
-  { id: 5, url: image6, alt: "image6" },
+const images: CarouselType[] = [
+  {
+    id: 0,
+    url: image1,
+    alt: "image1",
+    link: "/our-classes#strength_training",
+    details: {
+      title: "strength training",
+      desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, molestiae.",
+    },
+  },
+  {
+    id: 1,
+    url: image2,
+    alt: "image2",
+    link: "/our-classes#mobility_training",
+    details: { title: "mobility training" },
+  },
+  {
+    id: 2,
+    url: image3,
+    alt: "image3",
+    link: "/our-classes#agility_training",
+    details: {
+      title: "agility training",
+      desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis similique facilis nihil et totam exercitationem",
+    },
+  },
+  {
+    id: 3,
+    url: image4,
+    alt: "image4",
+    link: "/our-classes#stretching",
+    details: {
+      title: "stretching",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas officiis error vel accusantium culpa delectus.",
+    },
+  },
+  {
+    id: 4,
+    url: image5,
+    alt: "image5",
+    link: "/our-classes#balance_training",
+    details: { title: "balance training" },
+  },
+  {
+    id: 5,
+    url: image6,
+    alt: "image6",
+    link: "/our-classes#functional_training",
+    details: {
+      title: "functional training",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae atque esse deleniti.",
+    },
+  },
 ];
 
 export function meta({}: Route.MetaArgs) {
@@ -162,7 +210,7 @@ export default function Home({}: Props) {
         {/* ----------------------------- Happy Member's ----------------------------- */}
 
         <div className="flex flex-col items-center justify-between gap-y-20 @3xl/root:flex-row">
-        {/* ------------------------------ Side Graphic ------------------------------ */}
+          {/* ------------------------------ Side Graphic ------------------------------ */}
           <div className="basis-4/12 overflow-hidden">
             <motion.img
               initial="hidden"
@@ -297,8 +345,7 @@ export default function Home({}: Props) {
       <WrapperVertical className="gap-y-20 bg-position-[bottom_2rem_right_2rem] px-5 py-20 @3xl/root:py-30 @7xl/root:bg-[url(@/assets/EvolveText.png)] @7xl/root:bg-no-repeat @7xl/root:px-20">
         <div className="flex flex-col items-start justify-between gap-y-20 @3xl/root:flex-row">
           <div className="flex basis-8/12 flex-col items-start gap-y-16 @3xl/root:pr-8">
-
-          {/* --------------------------------- Heading -------------------------------- */}
+            {/* --------------------------------- Heading -------------------------------- */}
 
             <div className="flex flex-col gap-y-4 overflow-hidden">
               <motion.h2

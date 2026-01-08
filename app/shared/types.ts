@@ -18,4 +18,9 @@ export type Carousel = {
     url: string;
     id: number;
     alt: string;
+    link: string;
+    details: {
+        title: string;
+        desc?: string;
+    }
 }
