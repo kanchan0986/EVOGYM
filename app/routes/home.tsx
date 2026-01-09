@@ -339,7 +339,7 @@ export default function Home({}: Props) {
       </WrapperVertical>
 
       {/* -------------------------------------------------------------------------- */
-      /*                              Join Now Section                              */
+      /*                             Contact Us Section                             */
       /* -------------------------------------------------------------------------- */}
 
       <WrapperVertical className="gap-y-20 bg-position-[bottom_2rem_right_2rem] px-5 py-20 @3xl/root:py-30 @7xl/root:bg-[url(@/assets/EvolveText.png)] @7xl/root:bg-no-repeat @7xl/root:px-20">
@@ -359,7 +359,7 @@ export default function Home({}: Props) {
                 }}
                 className="text-primary-500 relative text-3xl font-extrabold uppercase before:absolute before:-top-20 before:left-0 before:animate-pulse before:content-[url(@/assets/AbstractWaves.png)] @3xl/root:before:-inset-20"
               >
-                Join now <span className="text-gray-500">to get in shape</span>
+                Contact us <span className="text-gray-500">with your query</span>
               </motion.h2>
               <motion.p
                 initial="hidden"

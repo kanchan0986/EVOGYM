@@ -43,7 +43,7 @@ export default function ContactUs({}: Props) {
                 }}
                 className="text-primary-500 relative text-3xl font-extrabold uppercase before:absolute before:-top-20 before:left-0 before:animate-pulse before:content-[url(@/assets/AbstractWaves.png)] @3xl/root:before:-inset-20"
               >
-                Join now <span className="text-gray-500">to get in shape</span>
+                Contact Us <span className="text-gray-500">with your query</span>
               </motion.h2>
               <motion.p
                 initial="hidden"
